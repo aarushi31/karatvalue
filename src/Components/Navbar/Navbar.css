@@ -1,0 +1,13 @@
+.nav{
+    width: 90vw;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchbox{
+    border-radius: 25px;
+}
+.items{
+    margin-right: 200px;
+}

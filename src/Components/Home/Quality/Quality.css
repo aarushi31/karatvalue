@@ -1,0 +1,22 @@
+.quality-container{
+    background-color: #FFFCF2;
+    width: 100%;
+    
+}
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.qcard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.qtext{
+    text-transform: capitalize;
+}
