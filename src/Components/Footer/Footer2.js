@@ -5,15 +5,15 @@ import ig from '../../images/ig.png'
 import twitter from '../../images/twitter.png'
 import fb from '../../images/fb.png'
 
-function Footer() {
+function Footer2() {
 
     
     return (
         <>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill='#FFFCF2' fill-opacity="1" d="M0,96L1440,256L1440,320L0,320Z"></path>
-            </svg>
-            <div style={{background:'#FFFCF2',width:'100%',padding:'30px'}}>
+            {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill='#ffffff' fill-opacity="1" d="M0,96L1440,256L1440,320L0,320Z"></path>
+            </svg> */}
+            <div style={{background:'#ffffff',width:'100%',padding:'30px'}}>
                 <span className="brand"><b>KARAT</b></span><br/><span className="brand">VALUE</span>
                 <div className="footer">
                 <div className="col">
@@ -50,4 +50,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default Footer2
