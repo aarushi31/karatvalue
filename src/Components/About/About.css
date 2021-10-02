@@ -1,0 +1,127 @@
+.about-container{
+    width: 100%;
+    background-color: #FFFCF2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.desc-row{
+    display: flex;
+    padding: 50px 160px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.desc-row img{
+    width: 400px;
+}
+.small-container{
+    padding: 50px 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card-container{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.small-card{
+    width: 200px;
+    height: 192px;
+    box-shadow: 0px 30px 46px -10px rgba(238, 151, 118, 0.25);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.small-card img{
+    width: 150px;
+    height: auto;
+}
+
+.small-container-text{
+    text-align: center;
+    width: 40vw;
+    color: #EE9776;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.vertical-lines{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.lines-container{
+    display: flex;
+    justify-content: center;
+}
+
+.vline{
+    height: 150px;
+    width: 1.5px;
+    background-color: black;
+}
+
+.vertical-text{
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+.white-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.founders{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.founder-heading{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.founder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    width: 100%;
+    justify-content: space-between;
+}
+.founder img{
+    height: 400px;
+    width: auto;
+}
+
+.founder-text{
+    width: 500px;
+}
