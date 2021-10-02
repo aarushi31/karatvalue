@@ -6,8 +6,14 @@ import cross from '../../images/cross.svg'
 import coin from '../../images/coin.png'
 import bag from '../../images/Vector.png'
 import heart from '../../images/Vector2.png'
+import { useHistory } from 'react-router'
 
 function Product() {
+
+    const history=useHistory();
+    const productDetail=()=>{
+        history.push('/productDetails')
+    }
     return (
         <>
             <div className="Product-container">
@@ -28,7 +34,7 @@ function Product() {
                     <span className="applied">Price: Low to high <span className="cross"><img src={cross}/></span></span>
                 </div>
                 <Container className="card-container">
-                <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
@@ -43,7 +49,7 @@ function Product() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                        <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
@@ -58,7 +64,7 @@ function Product() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                        <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
@@ -73,7 +79,7 @@ function Product() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                        <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
@@ -88,7 +94,7 @@ function Product() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                        <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
@@ -103,7 +109,7 @@ function Product() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                        <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
@@ -118,7 +124,7 @@ function Product() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                        <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
@@ -133,7 +139,7 @@ function Product() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                        <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
