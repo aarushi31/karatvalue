@@ -1,3 +1,13 @@
 .right.carousel-control, .left.carousel-control {
     display: none;
 }
+
+@media screen and (max-width:760px){
+    .carousel{
+        min-width:100vw;
+        margin-top: 100px;
+        position: relative;
+        right: 0;
+        left:0.3rem;
+    }
+}

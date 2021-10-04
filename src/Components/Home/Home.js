@@ -9,13 +9,13 @@ import Trending from './Trending/Trending'
 
 function Home() {
     return (
-        <>
+        <div style={{width:'100vw'}}>
             <Cover/>
             <Trending/>
             <Quality/>
             <Brands/>
             <Footer/>
-        </>
+        </div>
     )
 }
 

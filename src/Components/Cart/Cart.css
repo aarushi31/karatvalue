@@ -174,3 +174,34 @@
     top: 80px;
     text-align: right;
 }
+
+@media screen and (max-width:760px){
+    .product-deets img{
+        width: 100px;
+    }
+    .product-deets{
+        flex-direction: column;
+    }
+    .deets-text{
+        font-size: 12px;
+    }
+    .table-heading{
+        font-size: 14px;
+    }
+    .form{
+        flex-direction: column;
+    }
+    .form textarea{
+        width: 80vw;
+        height: 60px;
+    }
+    .cart-buttons{
+        margin-top: 50px;
+    }
+    .end-text{
+        font-size: 14px;
+        margin-top: 0;
+        top: 20px;
+        left: 90px;
+    }
+}

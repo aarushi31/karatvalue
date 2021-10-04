@@ -49,3 +49,12 @@
     margin-right: 50px;
     border-radius: 25px;
 }
+
+@media screen and (max-width:760px){
+    .filter{
+        padding: 0 20px;
+    }
+    .applied-filters{
+        padding: 0 20px;
+    }
+}

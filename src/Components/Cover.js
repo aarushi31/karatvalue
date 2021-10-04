@@ -7,7 +7,7 @@ function Cover() {
 
           
     return (
-              <Carousel controls={false}>
+              <Carousel controls={false} className="carousel">
                 <Carousel.Item interval={2000}>
                   <img
                     className="d-block w-100"

@@ -14,25 +14,25 @@ function Quality() {
             </svg>
             <div className="quality-container">
                 <div className="row">
-                    <div className="qcard" style={{width:'200px'}}>
+                    <div className="qcard">
                         <img src={insurance} style={{width:'40px'}}/>
                         <span className="qtext">free transit insurance</span>
                     </div>
-                    <div className="qcard" style={{width:'200px'}}>
+                    <div className="qcard">
                         <img src={certificate} style={{width:'40px'}}/>
                         <span className="qtext">certified jewellery</span>
                     </div>
-                    <div className="qcard" style={{width:'200px'}}>
+                    <div className="qcard">
                         <img src={returnBox} style={{width:'40px'}}/>
                         <span className="qtext">7 days returns</span>
-                    </div>
+                    </div> 
                 </div>
                 <div className="row" style={{marginTop:'100px'}}>
-                    <div className="qcard" style={{width:'200px'}}>
+                    <div className="qcard">
                         <img src={truck} style={{width:'40px'}}/>
                         <span className="qtext">Free delivery</span>
                     </div>
-                    <div className="qcard" style={{width:'200px'}}>
+                    <div className="qcard">
                         <img src={cod} style={{width:'40px'}}/>
                         <span className="qtext">COD available</span>
                     </div>

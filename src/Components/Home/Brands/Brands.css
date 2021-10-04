@@ -8,3 +8,14 @@
 .brow img{
     width: 100px;
 }
+
+@media screen and (max-width:760px) {
+    .brow{
+        justify-content: space-between;
+        margin-top: 50px;
+        min-width: 100vw;
+    }
+    .brow img{
+        width: 50px;
+    }
+}

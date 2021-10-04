@@ -11,7 +11,7 @@ function Trending() {
     const productDetail=()=>{
         history.push('/productDetails')
     }
-    return (
+    return ( 
         <Container>
             <div className="big-text">
                 <h2>Top</h2>
