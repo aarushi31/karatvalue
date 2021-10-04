@@ -16,7 +16,7 @@ function Navigation() {
         </Nav>
         <Nav>
           <Nav.Link href="/products">Products</Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
+          <Nav.Link eventKey={2} href="/cart">
             Cart
           </Nav.Link>
           <Button variant="dark" style={{width:'150px',borderRadius:'25px',marginLeft:'20px'}}>Login</Button>

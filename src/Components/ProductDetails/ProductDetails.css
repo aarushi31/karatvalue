@@ -32,8 +32,12 @@
     justify-content: space-between;
     align-items: center;
 }
+.selected{
+    width: 400px;
+}
 .small-images img{
     width: 100px;
+    cursor: pointer;
 }
 .details{
     display: flex;

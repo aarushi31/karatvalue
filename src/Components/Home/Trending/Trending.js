@@ -4,8 +4,13 @@ import './Trending.css'
 import coin from '../../../images/coin.png'
 import bag from '../../../images/Vector.png'
 import heart from '../../../images/Vector2.png'
+import { useHistory } from 'react-router'
 
 function Trending() {
+    const history=useHistory();
+    const productDetail=()=>{
+        history.push('/productDetails')
+    }
     return (
         <Container>
             <div className="big-text">
@@ -14,7 +19,7 @@ function Trending() {
             </div>
             <Container style={{marginTop:'60px'}} className="card-container">
     
-                        <div className="card" style={{borderRadius:'40px'}}>
+                        <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}}>10 grams 99.9% purity</span>
@@ -31,7 +36,7 @@ function Trending() {
                         </div>
                     
                    
-                    <div className="card" style={{borderRadius:'40px'}}>
+                    <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'16px'}}>10 grams 99.9% purity</span>
@@ -46,7 +51,7 @@ function Trending() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                   <div className="card" style={{borderRadius:'40px'}}>
+                   <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'16px'}}>10 grams 99.9% purity</span>
@@ -61,7 +66,7 @@ function Trending() {
                                 <span><img src={heart}/></span>
                             </div>
                         </div>
-                    <div className="card" style={{borderRadius:'40px'}}>
+                    <div className="card" style={{borderRadius:'40px'}} onClick={productDetail}>
                             <img src={coin}/>
                             <hr className="line"/>
                             <span style={{fontSize:'16px'}}>10 grams 99.9% purity</span>

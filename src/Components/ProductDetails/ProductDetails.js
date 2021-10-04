@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer2 from '../Footer/Footer2'
 import coin from '../../images/coin.png'
 import r1 from '../../images/r1.png'
@@ -10,16 +10,25 @@ import bag from '../../images/Vector.png'
 import heart from '../../images/Vector2.png'
 
 function ProductDetails() {
+    const images=[r1,r2,r3];
+    const [selected,setSelected]=useState(images[0]);
+
     return (
         <>
             <div className="productDetails-container" style={{background:'#FFFCF2'}}>
                 <div className="detail-container">
                 <div className="product-images">
-                    <img src={r3} style={{width:'400px'}}/>
+                    <img src={selected} style={{width:'400px'}} className="selected"/>
                     <div className="small-images">
+                        {/* <img src={r3} style={{width:'100px'}}/>
                         <img src={r2} style={{width:'100px'}}/>
-                        <img src={r1} style={{width:'100px'}}/>
-                        <img src={r1} style={{width:'100px'}}/>
+                        <img src={r1} style={{width:'100px'}}/> */}
+                        
+                        {images.map((img,idx)=>{
+                            return(
+                                <img src={img} style={{width:'100px'}} key={idx} onClick={()=>setSelected(img)}/>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="details">
