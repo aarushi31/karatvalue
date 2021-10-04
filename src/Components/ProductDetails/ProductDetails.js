@@ -12,13 +12,13 @@ import heart from '../../images/Vector2.png'
 function ProductDetails() {
     const images=[r1,r2,r3];
     const [selected,setSelected]=useState(images[0]);
-
+ 
     return (
         <>
             <div className="productDetails-container" style={{background:'#FFFCF2'}}>
                 <div className="detail-container">
                 <div className="product-images">
-                    <img src={selected} style={{width:'400px'}} className="selected"/>
+                    <img src={selected} className="selected"/>
                     <div className="small-images">
                         {/* <img src={r3} style={{width:'100px'}}/>
                         <img src={r2} style={{width:'100px'}}/>
