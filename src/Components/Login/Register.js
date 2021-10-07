@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
@@ -12,29 +12,76 @@ import cross from '../../images/cross.png'
 import eye from '../../images/eye.png'
 import lock from '../../images/lock.png'
 import Footer from '../Footer/Footer';
+import {useAuth} from '../AuthContext';
+import {db} from '../firebase'
+import { Alert } from 'react-bootstrap';
 
 function Register() {
     const history=useHistory();
-    const [firstname,setFname]=useState();
-    const [lastname,setLname]=useState();
-    const [email,setemail]=useState();
-    const [telephone,setTelephone]=useState();
-    const [fax,setFax]=useState();
-    const [add1,setAdd1]=useState();
+    const {currentUser}=useAuth();
+    const [firstname,setFname]=useState('');
+    const [lastname,setLname]=useState('');
+    const [email,setemail]=useState(currentUser.email);
+    const [telephone,setTelephone]=useState('');
+    const [fax,setFax]=useState('');
+    const [add1,setAdd1]=useState('');
     const [add2,setAdd2]=useState();
-    const [city,setCity]=useState();
-    const [postCode,setPcode]=useState();
-    const [countryCode,setCcode]=useState();
-    const [zoneId,setZoneId]=useState();
+    const [city,setCity]=useState('');
+    const [postCode,setPcode]=useState('');
+    const [countryCode,setCcode]=useState('');
+    const [zoneId,setZoneId]=useState('');
     const [password,setPassword]=useState();
     const [newsLetter,setNewsletter]=useState(true);
     const [agree,setAgree]=useState(true);
+    const [error, setError]=useState("")
+    const [loading,setLoading]=useState(false);
+    const [message,setMessage]=useState('');
 
     const [newP,setNew]=useState('');
     const [confirm,setConfirm]=useState('');
 
     const [newType,setNewType]=useState('password');
     const [confirmType,setConfirmType]=useState('password');
+
+    const [info , setInfo] = useState([]);
+  
+    // Start the fetch operation as soon as
+    // the page loads
+    
+  
+    // Fetch the required data using the get() method
+    const Fetchdata = ()=>{
+        db.collection("user-data").get().then((querySnapshot) => {
+             
+            // Loop through the data and store
+            // it in array to display
+            querySnapshot.forEach(element => {
+            
+                var data = element.data();
+                if(data.uid===currentUser.uid){
+                    console.log(data);
+                setInfo(arr => [...arr , data]);
+                setFname(data.Firstname);
+        setLname(data.Lastname)
+        setTelephone(data.telephone)
+        setAdd1(data.address)
+        setCity(data.city)
+        setPcode(data.postalcode)
+        setZoneId(data.zoneId)
+        setNewsletter(data.newsLetter)
+        setCcode(data.countryCode)
+        setemail(data.email)
+                }
+                  
+            });
+        })
+
+        
+    }
+
+    useEffect(()=>{
+        Fetchdata();
+    },[])
 
     const handleEye2=()=>{
         if(newType==='password'){
@@ -53,24 +100,39 @@ function Register() {
         }
     }
 
-    const handlesave=()=>{
-        if(newP!==confirm){
-            window.alert('New and confirm passwords are different')
-        }
-        else if(!newP || !confirm){
-            window.alert('Please fill all the fields')
-        }
-        else{
-            window.alert('Your have registered successfully');
-            history.push('/')
-        }
+    const handlesave=(e)=>{
+        e.preventDefault()
+        db.collection("user-data").add({
+            Firstname: firstname,
+            Lastname:lastname,
+            email: email,
+            uid:currentUser.uid,
+            address:add1,
+            city:city,
+            postalcode:postCode,
+            countryCode:countryCode,
+            telephone:telephone,
+            zoneId:zoneId,
+            newsLetter:newsLetter
+            
+        })
+        .then((docRef) => {
+            setMessage('Profile update successfully');
+        })
+        .catch((error) => {
+            setError("Error updating profile");
+        });
     }
+
+    
 
 
     return (
         <>
             <div className="profile-container">
             <center><h2 className="profile-heading">Update your profile</h2></center>
+            {error && <Alert variant="danger">{error}</Alert>}
+            {message && <Alert variant="success">{message}</Alert>}
             <div className="form">
                 <form>
                     <div className="profile-row">
@@ -138,11 +200,6 @@ function Register() {
                                     <input type="checkbox" id="newletter" name="newsletter" onChange={(e)=>setNewsletter(!newsLetter)} value={newsLetter}/>
                                     <label for="newletter">Subscribe to newletter</label>
                                 </div>
-                                <div className="input-checkbox">
-                            
-                                    <input type="checkbox" name="terms" id="terms" onChange={(e)=>setAgree(!agree)} value={agree}/>
-                                    <label for="terms">Terms and conditions</label>
-                            </div>
                     </div>
                     <div className="profile-row btn">
                         <center><button className="save" onClick={handlesave} disabled={!agree}>Save</button></center>
