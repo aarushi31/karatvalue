@@ -125,3 +125,29 @@
 .founder-text{
     width: 500px;
 }
+
+@media screen and (max-width:760px){
+    .desc-row{
+        flex-direction: column;
+        padding: 20px 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .desc-row img{
+        width: 60vw;
+    }
+    .about-container{
+        padding-top: 60px;
+    }
+    .small-container{
+        padding: 30px 40px;
+    }
+    .small-container-text{
+        width: 100%;
+    }
+    .small-card{
+        width: 60vw;
+        margin-top: 20px;
+    }
+}

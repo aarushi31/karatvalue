@@ -7,9 +7,16 @@ import Product from './Components/Products/Product'
 import About from './Components/About/About';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 import Cart from './Components/Cart/Cart';
+import Login from './Components/Login/Login';
+import Register from './Components/Login/Register';
+import Signup from './Components/Login/Signup';
+import { AuthProvider } from './Components/AuthContext';
+import PrivateRoute from './Components/Navbar/PrivateRoute';
+import ForgotPassword from './Components/Login/ForgotPassword'
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
     <Navigation/>
       <Switch>
@@ -17,9 +24,14 @@ function App() {
         <Route path="/products" component={Product}/>
         <Route path="/aboutus" component={About}/>
         <Route path="/productDetails" component={ProductDetails}/>
-        <Route path="/cart" component={Cart}/>
+        <PrivateRoute path="/cart" component={Cart}/>
+        <Route path="/login" component={Login}/>
+        <PrivateRoute path="/register" component={Register}/>
+        <Route path="/forgotPassword" component={ForgotPassword}/>
+        <Route path="/signup" component={Signup}/>
       </Switch>
     </Router>
+    </AuthProvider>
   );
 }
 

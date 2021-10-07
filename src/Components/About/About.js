@@ -10,7 +10,7 @@ import c4 from '../../images/image 22.png'
 import v1 from '../../images/Group 1.png'
 import f1 from '../../images/image 16.png'
 import f2 from '../../images/image 18.png'
-
+ 
 function About() {
     return (
         <>
